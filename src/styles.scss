@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #9480e1;
+}
+
+$primary-message-color: #252525;
+$secondary-message-color: #00a49c;
+$card-background-color: #ffffff;
+
+$font-bold: HelveticaNeue-Bold;
+$font-med: HelveticaNeue-Medium;
+
+$breakpoint-desktop: 1024px;
