@@ -1,0 +1,18 @@
+@import "./../../styles.scss";
+
+.card-header {
+  width: 360px;
+  height: 100px;
+  font-family: $font-bold;
+  font-size: 35px;
+  color: $secondary-message-color;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 47px;
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .card-header {
+    width: 400px;
+  }
+}
