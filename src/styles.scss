@@ -16,3 +16,16 @@ $font-bold: HelveticaNeue-Bold;
 $font-med: HelveticaNeue-Medium;
 
 $breakpoint-desktop: 1024px;
+
+@mixin align-card-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+@mixin align-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

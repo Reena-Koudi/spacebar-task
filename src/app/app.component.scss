@@ -1,0 +1,21 @@
+@import "./../styles.scss";
+
+.claim-container {
+  @include align-center;
+  height: 100vh;
+}
+
+.card-container {
+  @include align-card-items;
+  background-color: $card-background-color;
+  box-shadow: 0 4px 0 0 rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  width: 350px;
+  height: 290px;
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .card-container {
+    width: 600px;
+  }
+}
