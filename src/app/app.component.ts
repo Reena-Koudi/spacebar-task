@@ -10,13 +10,11 @@ export class AppComponent implements OnInit {
   @ViewChild('counter', { read: CounterComponent, static: true })
   private counter: CounterComponent;
 
-  title = 'spacebar-task';
-
   amount = 70;
   prize = 'Free Spins';
   game = 'Gemix';
-
   btnLabel = 'Claim now';
+  isShow = false;
 
   ngOnInit(): void {
     this.counter.startAt = 60;
@@ -26,5 +24,10 @@ export class AppComponent implements OnInit {
       }
     });
     this.counter.start();
+  }
+
+  onClaimNow(): void {
+    console.log('Btn Clicked');
+    this.isShow = !this.isShow;
   }
 }

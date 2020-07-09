@@ -1,20 +1,17 @@
-<!-- <app-button></app-button>
-
-<app-claim-message [amount]="amount"
-									 [prize]="prize"
-									 [game]="game"></app-claim-message>
-
-<app-success-message [amount]="amount"
-										 [prize]="prize"></app-success-message> -->
-
 <section class="claim-container">
 
 	<div class="card-container">
-		<app-claim-message [amount]="amount"
+		<app-claim-message *ngIf="isShow"
+											 [amount]="amount"
 											 [prize]="prize"
 											 [game]="game"></app-claim-message>
-		<app-counter #counter></app-counter>
+		<app-success-message *ngIf="!isShow"
+												 [amount]="amount"
+												 [prize]="prize"></app-success-message>
+		<app-counter #counter
+								 [style.visibility]="isShow ? 'visible' : 'hidden'"></app-counter>
 		<app-button [label]="btnLabel"
-								routerLink="/success"></app-button>
+								routerLink="/success"
+								(click)="onClaimNow()"></app-button>
 	</div>
 </section>
