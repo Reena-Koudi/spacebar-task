@@ -3,7 +3,7 @@ import { CounterComponent } from './counter/counter.component';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-type Post = { amount: number; prize: string; game: string };
+type Post = { amount: number; prize: string; game: string; countdown: number };
 
 @Component({
   selector: 'app-root',
@@ -16,9 +16,7 @@ export class AppComponent implements OnInit {
 
   title = 'spacebar-task';
   btnLabel = 'Claim now';
-
   isShow = false;
-
   post: Post;
 
   constructor(http: HttpClient) {
@@ -31,7 +29,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.counter.startAt = 60;
-    this.counter.counterState.subscribe((msg) => {
+    this.counter.counterState.subscribe((msg): any => {
       if (msg === 'COMPLETE') {
         console.log('Complete;');
       }
@@ -44,7 +42,7 @@ export class AppComponent implements OnInit {
     this.isShow = !this.isShow;
   }
 
-  onToggle(element, text): void {
+  onToggle(element, text): any {
     element.textContent = text;
     element.disabled = true;
   }

@@ -8,6 +8,8 @@ body {
   background-color: #9480e1;
 }
 
+// Variables
+
 $primary-message-color: #252525;
 $secondary-message-color: #00a49c;
 $card-background-color: #ffffff;
@@ -16,6 +18,8 @@ $font-bold: HelveticaNeue-Bold;
 $font-med: HelveticaNeue-Medium;
 
 $breakpoint-desktop: 1024px;
+
+// Mixins
 
 @mixin align-card-items {
   display: flex;

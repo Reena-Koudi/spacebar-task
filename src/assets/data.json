@@ -1,5 +1,6 @@
 {
   "amount": "80",
   "prize": "Free Spins",
-  "game": "Gemix"
+  "game": "Gemix",
+  "countdown": 60
 }
