@@ -16,3 +16,11 @@ button {
   text-align: center;
   line-height: 35px;
 }
+
+.btn:disabled {
+  background-image: url("./../../assets/icon-tick.svg");
+  background-color: #dde4e4;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: none;
+}

@@ -14,7 +14,9 @@ export class AppComponent implements OnInit {
   prize = 'Free Spins';
   game = 'Gemix';
   btnLabel = 'Claim now';
+
   isShow = false;
+  // isDisabled = false;
 
   ngOnInit(): void {
     this.counter.startAt = 60;
@@ -29,5 +31,11 @@ export class AppComponent implements OnInit {
   onClaimNow(): void {
     console.log('Btn Clicked');
     this.isShow = !this.isShow;
+    // this.isDisabled = true;
+  }
+
+  onToggle(element, text): void {
+    element.textContent = text;
+    element.disabled = true;
   }
 }
