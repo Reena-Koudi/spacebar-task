@@ -6,6 +6,7 @@ import { ButtonComponent } from './button/button.component';
 import { ClaimMessageComponent } from './claim-message/claim-message.component';
 import { SuccessMessageComponent } from './success-message/success-message.component';
 import { CounterComponent } from './counter/counter.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -13,12 +14,10 @@ import { CounterComponent } from './counter/counter.component';
     ButtonComponent,
     ClaimMessageComponent,
     SuccessMessageComponent,
-    CounterComponent
+    CounterComponent,
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -2,12 +2,12 @@
 
 	<div class="card-container">
 		<app-claim-message *ngIf="!isShow"
-											 [amount]="amount"
-											 [prize]="prize"
-											 [game]="game"></app-claim-message>
+											 [amount]="post.amount"
+											 [prize]="post.prize"
+											 [game]="post.game"></app-claim-message>
 		<app-success-message *ngIf="isShow"
-												 [amount]="amount"
-												 [prize]="prize"></app-success-message>
+												 [amount]="post.amount"
+												 [prize]="post.prize"></app-success-message>
 		<app-counter #counter
 								 [style.visibility]="!isShow ? 'visible' : 'hidden'"></app-counter>
 		<app-button class="btn"

@@ -1,5 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { CounterComponent } from './counter/counter.component';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+type Post = { amount: number; prize: string; game: string };
 
 @Component({
   selector: 'app-root',
@@ -10,13 +14,20 @@ export class AppComponent implements OnInit {
   @ViewChild('counter', { read: CounterComponent, static: true })
   private counter: CounterComponent;
 
-  amount = 70;
-  prize = 'Free Spins';
-  game = 'Gemix';
+  title = 'spacebar-task';
   btnLabel = 'Claim now';
 
   isShow = false;
-  // isDisabled = false;
+
+  post: Post;
+
+  constructor(http: HttpClient) {
+    const post$: Observable<Post> = http.get<Post>('/assets/data.json');
+    post$.subscribe((post) => {
+      this.post = post;
+      console.log(post);
+    });
+  }
 
   ngOnInit(): void {
     this.counter.startAt = 60;
@@ -31,7 +42,6 @@ export class AppComponent implements OnInit {
   onClaimNow(): void {
     console.log('Btn Clicked');
     this.isShow = !this.isShow;
-    // this.isDisabled = true;
   }
 
   onToggle(element, text): void {
